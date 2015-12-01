@@ -1,0 +1,56 @@
+\section{Polarizacion}
+\subsection{Cálculo Teórico}
+
+El circuito de polarización puede observarse en la figura \ref{im:polarizacion}. Como puede verse, el gate del transistor 1 se encuentra a una tensión de $0\V$. Con este dato, y recorriendo la malla de transferencia, reempĺazando la corriente de drain por la ecuación característica del MOSFET se obtiene la siguiente ecuación:
+
+\begin{equation}
+	\VGSQuno = 0 - \IDQuno * 1\Kohm
+\end{equation}
+
+\begin{equation}
+	\frac{\VGSQuno}{1\Kohm} = -\frac{\mbox{kp}}{2} \cdot (\VGSQuno - \VT)^2
+	\label{eq:VGSQ1}
+\end{equation}
+
+Reemplazando los datos conocidos en \ref{eq:VGSQ1} se obtiene un $\VGSQuno = -0.7\V$. Para obtener $\VGSQdos$ se parte conociendo la tensión contra común del gate del transistor 2. Mediante un calculo similar, se obtiene un $\VGSQdos = -0.916\V$. Las tensiones contra comun y la corriente de polarización pueden verse en la tabla \ref{ta:datosPolarizacion}.
+
+\begin{table}[ht]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|}
+		\hline 
+		 & $\VS$ & $\VG$ & $\VD$ & $\IDQ$ & $g_m$ \\ 
+		\hline 
+		T1 & $0.7\V$ & $0\V$ & $1.616\V$ & $0.7\mA$ & $4.5\mS$ \\ 
+		\hline 
+		T2 & $1.616\V$ & $0.7\V$ & $6.71\V$ & $0.7\mA$ & $16.8\mS$ \\ 
+		\hline 
+		\end{tabular} 
+	\end{center}
+	\caption{Valores de polarización del circuito amplificador calculados teóricamente}
+	\label{ta:datosPolarizacion}
+\end{table}
+
+
+\subsection{Simulación}
+
+Luego se prosigue a simular el circuito y ver su polarización. Se simulo el circuito de la figura \ref{im:circuito} utilizando el programa \textsl{LTSpice}.Los valores obtenidos se pueden ver en la tabla  \ref{ta:datosPolarizacion_sim}. 
+
+
+\begin{table}[ht]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|}
+		\hline 
+		 & $\VS$ & $\VG$ & $\VD$ & $\IDQ$ & $g_m$ \\ 
+		\hline 
+		T1 & $0.695\V$ & $0\V$ & $1.612\V$ & $0.695\mA$ & $4.57\mS$ \\ 
+		\hline 
+		T2 & $1.612\V$ & $0.695\V$ & $6.662\V$ & $0.695\mA$ & $16.7\mS$ \\ 
+		\hline 
+		\end{tabular} 
+	\end{center}
+	\caption{Valores de polarización del circuito amplificador obtenidos mediante simulación}
+	\label{ta:datosPolarizacion_sim}
+\end{table}
+
+Se puede observar que los valores obtenidos en el simulación coinciden con los obtenidos teóricamente. Esto confirma que las aproximaciones realizadas fueron válidas.
+

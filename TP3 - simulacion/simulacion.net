@@ -1,0 +1,31 @@
+* Z:\home\fedemgp\Dropbox\circuitos\TL3\TP3 - simulacion\simulacion.asc
+M1 N005 vin N009 N002 minmos1
+M2 N007 N009 N006 N002 minmos2
+R1 vin 0 1meg
+R2 N009 0 1k
+R3 N001 N010 4.7k
+R4 vout 0 4.7k
+C2 N009 0 1µ
+C3 N010 0 0.1µ
+C4 vout N001 1µ
+V1 N010 0 10
+V2 N008 0 SINE(0 1m 20k) AC 1m
+R6 N004 0 1meg
+C5 N004 0 200p
+C1 vin N009 2.2p
+C6 N001 vin 0.025p
+C7 N009 N009 1.1p
+C8 N001 N009 0.8p
+R5 N006 N005 50
+R7 N001 N007 100
+R8 N003 0 1meg
+C9 N003 0 200p
+R9 vin N008 50
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Program Files\LTC\LTspiceIV\lib\cmp\standard.mos
+.model minmos1 nmos {vto=-1, kp=0.015, lambda=0, w=1m, l=1m, gamma=0}
+.model minmos2 nmos {vto=-1, kp=0.2, lambda=0, w=1m, l=1m, gamma=0}
+.ac dec 1000 100 300meg
+.backanno
+.end

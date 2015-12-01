@@ -1,0 +1,62 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage[headheight = 110pt]{geometry}
+
+\geometry{
+	a4paper,
+	left=30mm,
+	right=30mm,
+	top=20mm,
+	bottom=20mm,
+}
+
+\newcommand{\codigoMateria}{86.06 }
+\newcommand{\nombreMateria}{Circuitos Electrónicos}
+\newcommand{\nroTP}{3}
+\newcommand{\tipoInforme}{Preinforme}
+
+\newcommand{\nombreDos}{Liaudat, Tobias}
+\newcommand{\padronDos}{95540}
+
+\newcommand{\nombreUno}{Gomez Peter, Federico}
+\newcommand{\padronUno}{96091}
+
+\begin{document}
+
+\begin{center}
+	\textbf{Universidad de Buenos Aires\\
+	Facultad de Ingeniería}\\
+	\vspace{1em}
+	\begin{center}
+		\includegraphics{../img/fiuba.jpg}
+	\end{center}
+	\LARGE{\codigoMateria - \nombreMateria\\
+	Trabajo de Laboratorio n$^\circ$\nroTP\\}
+	\vspace{1em}
+	\large{\tipoInforme}
+\end{center}
+
+\nombreUno - \#\padronUno 
+
+\nombreDos - \#\padronDos 
+
+\begin{abstract}
+	En el presente informe se analizará la respuesta en frecuencia de una etapa amplificadora formada por dos transistores integrados de tecnología metal-óxido-semiconductor, de canal preformado, en configuracion cascode.
+\end{abstract}
+
+\newpage
+\input{encabezado.tex}
+
+\input{comandos.tex}
+
+\input{Desarrollo.tex}
+
+\input{Polarizacion.tex}
+
+\input{senal.tex}
+
+\end{document}
